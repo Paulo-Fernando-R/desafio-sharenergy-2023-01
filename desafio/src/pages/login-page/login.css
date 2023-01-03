@@ -1,0 +1,170 @@
+.main-box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main-box section:first-child {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.main-box section:first-child img {
+  width: 80%;
+}
+.main-box section:last-child {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-box section:last-child div:first-child {
+  height: 50%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-box section:last-child div:first-child h4 {
+  margin-top: 10px;
+}
+.main-box section:last-child div:last-child {
+  height: 50%;
+  width: 70%;
+}
+.main-box section:last-child div:last-child form {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.main-box section:last-child div:last-child form input {
+  transition: 400ms;
+  color: #666;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  border: rgba(204, 204, 204, 0.5) solid 1px;
+}
+.main-box section:last-child div:last-child form input:focus {
+  outline: none;
+  transition: 400ms;
+  box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
+  transform: scale(1.005);
+}
+.main-box section:last-child div:last-child form label {
+  color: #666;
+}
+.main-box section:last-child div:last-child form #check {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.main-box section:last-child div:last-child form button {
+  transition: 400ms;
+  background-color: #4089FB;
+  color: white;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+.main-box section:last-child div:last-child form button:hover {
+  transition: 400ms;
+  transform: scale(1.005);
+}
+
+@media screen and (orientation: portrait) {
+  .main-box {
+    flex-direction: column;
+  }
+  .main-box section:first-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .main-box section:first-child img {
+    width: 50%;
+  }
+  .main-box section:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .main-box section:last-child div:first-child {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-box section:last-child div:first-child h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .main-box section:last-child div:first-child h4 {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .main-box section:last-child div:last-child {
+    width: 80%;
+  }
+  .main-box section:last-child div:last-child form {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-box section:last-child div:last-child form input {
+    transition: 400ms;
+    color: #666;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    border: rgba(204, 204, 204, 0.5) solid 1px;
+  }
+  .main-box section:last-child div:last-child form input:focus {
+    outline: none;
+    transition: 400ms;
+    box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
+    transform: scale(1.005);
+  }
+  .main-box section:last-child div:last-child form label {
+    color: #666;
+  }
+  .main-box section:last-child div:last-child form #check {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main-box section:last-child div:last-child form button {
+    transition: 400ms;
+    background-color: #4089FB;
+    color: white;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  .main-box section:last-child div:last-child form button:hover {
+    transition: 400ms;
+    transform: scale(1.005);
+  }
+}/*# sourceMappingURL=login.css.map */

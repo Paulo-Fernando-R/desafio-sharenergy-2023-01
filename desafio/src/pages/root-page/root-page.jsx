@@ -36,7 +36,6 @@ return(
         <div className="menu-box">
             <SideMenu setSelect={setSelect}/>
         </div>
-        <h1>{select}</h1>
        
        <div className="content-box">
           <Content/>

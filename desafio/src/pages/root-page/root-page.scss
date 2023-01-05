@@ -1,0 +1,21 @@
+.root-main-box{
+   display: flex;
+   display: inline-flexbox;
+   width: 100%;
+   .menu-box{
+   }
+   .content-box{
+        margin-left: 250px;
+        width: 100%;
+   }
+}
+
+@media screen and (orientation: portrait) {
+    .root-main-box{
+        flex-direction: column;
+        .content-box{
+            margin-left: 0;
+        }
+    }
+    
+}

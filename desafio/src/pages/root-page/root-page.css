@@ -1,0 +1,18 @@
+.root-main-box {
+  display: flex;
+  display: inline-flexbox;
+  width: 100%;
+}
+.root-main-box .content-box {
+  margin-left: 250px;
+  width: 100%;
+}
+
+@media screen and (orientation: portrait) {
+  .root-main-box {
+    flex-direction: column;
+  }
+  .root-main-box .content-box {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=root-page.css.map */

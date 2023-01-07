@@ -9,6 +9,18 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        input{
+            height: 20px; 
+            width: 60%;
+            margin-top: 10px;
+            color: #666;
+            padding: 5px;
+            padding-left: 10px;
+            border-radius: 10px;
+            outline: none;
+            border: rgba(204, 204, 204, 0.5) solid 1px;
+        }
         
     }
 
@@ -22,6 +34,49 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             grid-auto-rows: minmax(270px, auto);
+        }
+    }
+
+    .controls-box{
+        height: 50px;
+        margin-bottom: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            transition: 400ms;
+            height: 40px;
+            width: 80px;
+            outline: none;
+            border: none;
+            border-radius: 15px;
+            color: #666;
+        }
+        button:first-child{
+            margin-right: 10px;
+        }
+        button:last-child{
+            margin-left: 10px;
+        }
+        button:hover{
+            transition: 400ms;
+            background-color: #2F2F3B;
+            color: #fff;
+        }
+
+        h4{
+            align-items: center;
+            background-color: #2F2F3B;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            height: 30px;
+            width: 30px;
         }
     }
 }
@@ -51,6 +106,7 @@
     .align-box{
         display: flex;
         justify-content: center;
+
         div{
             max-width: 100%;
             padding: 20px;

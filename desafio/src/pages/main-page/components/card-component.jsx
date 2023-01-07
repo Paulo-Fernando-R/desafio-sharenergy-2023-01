@@ -5,15 +5,15 @@ export default function CardComponent(props){
         <div className='card-component-main-box' id='card'>
             <section className='card-content-box'>
                 
-                <img src={code} alt="" />
-                <h3>Paulo Fernando Rodrigues</h3>
+                <img src={props.item.picture.medium} alt="" />
+                <h3>{props.item.name.first} {props.item.name.last} ksjdkjksdjkj</h3>
                 
             </section>
 
             <section className='card-content-box'>
-                <p>E-mail: abc123@seila.com</p>
-                <p>Nome de usuário: jaokisse1223</p>
-                <p>Idade: 45 anos</p>
+                <p>E-mail: {props.item.email}</p>
+                <p>Nome de usuário: {props.item.login.username}</p>
+                <p>Idade: {props.item.dob.age}</p>
             </section>
             
         </div>

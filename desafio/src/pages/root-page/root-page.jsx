@@ -8,7 +8,7 @@ export default function RootPage (props){
 const [select, setSelect] = useState(1)
 
 useEffect(() => {
-    console.log(select)
+    //console.log(select)
 },[select])
 
 const Content = () => {

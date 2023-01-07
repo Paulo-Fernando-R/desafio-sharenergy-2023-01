@@ -8,6 +8,17 @@
   flex-direction: column;
   justify-content: center;
 }
+.home-main-box article input {
+  height: 20px;
+  width: 60%;
+  margin-top: 10px;
+  color: #666;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: rgba(204, 204, 204, 0.5) solid 1px;
+}
 .home-main-box .align-box {
   display: flex;
   justify-content: center;
@@ -19,6 +30,46 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   grid-auto-rows: minmax(270px, auto);
+}
+.home-main-box .controls-box {
+  height: 50px;
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.home-main-box .controls-box button {
+  transition: 400ms;
+  height: 40px;
+  width: 80px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  color: #666;
+}
+.home-main-box .controls-box button:first-child {
+  margin-right: 10px;
+}
+.home-main-box .controls-box button:last-child {
+  margin-left: 10px;
+}
+.home-main-box .controls-box button:hover {
+  transition: 400ms;
+  background-color: #2F2F3B;
+  color: #fff;
+}
+.home-main-box .controls-box h4 {
+  align-items: center;
+  background-color: #2F2F3B;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  height: 30px;
+  width: 30px;
 }
 
 @media screen and (orientation: portrait) {

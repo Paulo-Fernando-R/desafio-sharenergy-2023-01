@@ -21,10 +21,16 @@
   padding-top: 20px;
 }
 #card .card-content-box img {
+  transition: 600ms;
   width: 60px;
   height: 60px;
   border-radius: 200px;
   margin-right: 10px;
+}
+#card .card-content-box img:hover {
+  transition: 600ms;
+  transform: scale(2);
+  box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
 }
 #card .card-content-box:nth-child(2) {
   height: 70%;

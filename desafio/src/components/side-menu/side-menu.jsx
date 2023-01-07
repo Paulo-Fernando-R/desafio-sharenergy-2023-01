@@ -13,7 +13,7 @@ export default function SideMenu({setSelect}){
             </div>
 
             <ul>
-                <Link onClick={() => {setSelect(0)}} className='li'><img src={home} alt="" /><li>Tela algo</li></Link>
+                <Link onClick={() => {setSelect(0)}} className='li'><img src={home} alt="" /><li>Usuários</li></Link>
                 <Link onClick={() => {setSelect(1)}} className='li'><img src={home} alt="" /><li>Tela algo</li></Link>
                 <Link onClick={() => {setSelect(2)}} className='li'><img src={home} alt="" /><li>Tela algo</li></Link>
             </ul>

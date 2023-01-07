@@ -5,7 +5,7 @@ export default function CardComponent(props){
         <div className='card-component-main-box' id='card'>
             <section className='card-content-box'>
                 
-                <img src={props.item.picture.medium} alt="" />
+                <img src={props.item.picture.large} alt="" />
                 <h3>{props.item.name.first} {props.item.name.last} ksjdkjksdjkj</h3>
                 
             </section>

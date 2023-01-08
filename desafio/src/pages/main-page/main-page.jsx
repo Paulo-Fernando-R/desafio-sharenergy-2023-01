@@ -10,12 +10,25 @@ export default function MainPage(props){
     const [cookie, setCookie, removeCoockie] = useCookies()
     const [itens, setItens] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
-    const [search, setSeach] = useState(false)
+    const [search, setSeach] = useState('')
     const [loading, setLoading] = useState(false)
+    const [searchItens, setSearchItens] = useState([])
     const pages = Math.ceil(itens.length / 12)
     const startIndex = currentPage * 12
     const endIndex = startIndex + 12;
     const currentItens = itens.slice(startIndex, endIndex)
+
+
+    const seachUser = () => {
+        let temp = []
+        itens.forEach((item) => {
+            if(item.email.includes(search)){
+                temp.push(item)
+            }
+        })
+        setSearchItens(temp)
+        console.log(searchItens)
+    }
 
     const fetchData = async() => {
         setLoading(true)
@@ -23,7 +36,7 @@ export default function MainPage(props){
             const response = await fetch('https://randomuser.me/api/?page=3&results=60&seed=abc');
             const json = await response.json();
             setItens(json.results)
-            console.log(json.results);
+            //console.log(json.results);
         }
         catch(e){
             console.log('erro')
@@ -67,20 +80,36 @@ export default function MainPage(props){
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                             Libero earum deleniti neque atque veniam suscipit alias qui
                         </p>
-                        <input type="text" placeholder="Pesquisa" />
+                        <input 
+                            type="text" 
+                            placeholder="Pesquisa" 
+                            value={search}
+                            onChange={(e) => {
+                                setSeach(e.target.value)
+                                if(search.length > 2)
+                                    seachUser()
+                            }}
+                        />
                     </article>
 
                     <section className="align-box">
                         <div>
                         
                             {
+                                search.length < 3?
                                 currentItens.map(item => {
+                                    return <CardComponent key={item.login.uuid} item={item}/>
+                                })
+                                :
+                                searchItens.map(item => {
                                     return <CardComponent key={item.login.uuid} item={item}/>
                                 })
                             }
                         </div>
                     </section>
 
+                    {
+                    search.length < 3?
                     <div className="controls-box">
                         <button
                             onClick={(e) => {
@@ -104,6 +133,9 @@ export default function MainPage(props){
                             Próxima
                         </button>
                     </div>
+                    :
+                    <></>
+                    }
                     
                 </nav>
             </div>

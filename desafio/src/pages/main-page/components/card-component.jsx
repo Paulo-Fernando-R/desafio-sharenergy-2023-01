@@ -6,7 +6,7 @@ export default function CardComponent(props){
             <section className='card-content-box'>
                 
                 <img src={props.item.picture.large} alt="" />
-                <h3>{props.item.name.first} {props.item.name.last} ksjdkjksdjkj</h3>
+                <h3>{props.item.name.first} {props.item.name.last}</h3>
                 
             </section>
 

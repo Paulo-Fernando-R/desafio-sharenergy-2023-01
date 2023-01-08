@@ -12,9 +12,9 @@ export default function MainPage(props){
     const [currentPage, setCurrentPage] = useState(0)
     const [search, setSeach] = useState(false)
     const [loading, setLoading] = useState(false)
-    const pages = Math.ceil(itens.length / 10)
-    const startIndex = currentPage * 10
-    const endIndex = startIndex + 10;
+    const pages = Math.ceil(itens.length / 12)
+    const startIndex = currentPage * 12
+    const endIndex = startIndex + 12;
     const currentItens = itens.slice(startIndex, endIndex)
 
     const fetchData = async() => {

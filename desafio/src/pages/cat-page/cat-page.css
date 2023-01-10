@@ -1,0 +1,59 @@
+.cat-main-box {
+  display: flex;
+}
+.cat-main-box .http-main-box {
+  height: 100vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-right: rgba(204, 204, 204, 0.5) solid 2px;
+  min-height: 100vh;
+  max-width: 500px;
+}
+.cat-main-box .http-main-box article {
+  width: 100%;
+  padding: 20px;
+  height: 100px;
+}
+.cat-main-box .http-main-box section {
+  width: 100%;
+  display: flex;
+  overflow-y: scroll;
+}
+.cat-main-box .http-main-box section ul {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.cat-main-box .http-main-box section ul li {
+  transition: 400ms;
+  list-style: none;
+  width: 85%;
+  background-color: rgba(204, 204, 204, 0.5);
+  color: #666;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cat-main-box .http-main-box section ul li:hover {
+  transition: 400ms;
+  background-color: #2F2F3B;
+  color: white;
+  transform: scale(1.005);
+}
+.cat-main-box .http-main-box section ul li:active {
+  transform: scale(0.95);
+}
+.cat-main-box .image-main-box {
+  width: 60%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cat-main-box .image-main-box img {
+  width: 50%;
+}/*# sourceMappingURL=cat-page.css.map */

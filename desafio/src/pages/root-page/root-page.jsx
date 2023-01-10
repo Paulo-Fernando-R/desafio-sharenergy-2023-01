@@ -1,11 +1,12 @@
 import SideMenu from "../../components/side-menu/side-menu"
 import './root-page.css'
 import MainPage from "../main-page/main-page"
+import CatPage from "../cat-page/cat-page"
 import { useEffect, useState } from "react"
 
 export default function RootPage (props){
 
-const [select, setSelect] = useState(1)
+const [select, setSelect] = useState(0)
 
 useEffect(() => {
     //console.log(select)
@@ -21,7 +22,7 @@ const Content = () => {
     else if(select === 1)
     {
         return(
-            <MainPage/>
+            <CatPage/>
         )
     }
     else{

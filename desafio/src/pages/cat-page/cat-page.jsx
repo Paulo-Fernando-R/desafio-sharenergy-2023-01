@@ -2,12 +2,13 @@ import './cat-page.css'
 import '../../global-style.css'
 import pana from '../../assets/pana.png'
 import { useEffect, useState } from 'react'
-import axios from 'axios';
+import { Audio } from 'react-loader-spinner'
 
 export default function CatPage(props) {
     const [cat, setCat] = useState('200')
     const url = "https://http.cat/";
     const [loading, setLoading] = useState(false)
+
     const status =  {
         "codes":[
             {
@@ -420,8 +421,13 @@ export default function CatPage(props) {
                                     key={item.code}
                                     value={item.code}
                                     onClick={(e) => {
+                                        setLoading(true)
                                         setCat(e.target.value)
-                                        console.log(cat)
+                                        
+                                        setTimeout(() => {
+                                            console.log(cat)
+                                            setLoading(false)
+                                        }, 500);
                                     }}
                                 >
                                     status: {item.code}, {item.phrase}
@@ -433,7 +439,22 @@ export default function CatPage(props) {
             </nav>
 
             <nav className='image-main-box'>
-                <img src={'https://http.cat/' + cat + '.jpg'} alt="" />
+                {
+                    loading?
+                    <div className="loading-box">
+                        <Audio
+                        height="80"
+                        width="80"
+                        radius="9"
+                        color="#2F2F3B"
+                        ariaLabel="loading"
+                        wrapperStyle
+                        wrapperClass
+                    />
+                    </div>
+                    :
+                    <img src={'https://http.cat/' + cat + '.jpg'} alt="" />
+                }
             </nav>
         </div>
     )

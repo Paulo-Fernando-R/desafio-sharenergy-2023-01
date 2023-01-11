@@ -424,7 +424,6 @@ export default function CatPage(props) {
                                         setCat(e.target.value)
                                         
                                         setTimeout(() => {
-                                            console.log(cat)
                                             setLoading(false)
                                         }, 500);
                                     }}

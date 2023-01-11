@@ -9,7 +9,6 @@
 
     article{
         width: 100%;
-        //padding: 200px;
         height: 100px;
 
         h1{
@@ -24,6 +23,8 @@
         img{
             transition: 400ms;
             width: 70%;
+            min-width: 50%;
+            max-height: 90vh;
             border-radius: 30px;
         }
         img:hover{

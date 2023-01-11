@@ -21,6 +21,8 @@
 .dog-main-box section img {
   transition: 400ms;
   width: 70%;
+  min-width: 50%;
+  max-height: 90vh;
   border-radius: 30px;
 }
 .dog-main-box section img:hover {

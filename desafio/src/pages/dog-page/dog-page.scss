@@ -22,10 +22,14 @@
         justify-content: center;
 
         img{
+            transition: 400ms;
             width: 70%;
             border-radius: 30px;
         }
-
+        img:hover{
+            transition: 400ms;
+            transform: scale(1.05)
+        }
     }
 
     article:last-child{
@@ -45,6 +49,7 @@
             border: none;
             font-weight: 300;
             font-size: 15px;
+            cursor: pointer;
         }
         button:hover{
             transition: 400ms;

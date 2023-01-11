@@ -19,8 +19,13 @@
   justify-content: center;
 }
 .dog-main-box section img {
+  transition: 400ms;
   width: 70%;
   border-radius: 30px;
+}
+.dog-main-box section img:hover {
+  transition: 400ms;
+  transform: scale(1.05);
 }
 .dog-main-box article:last-child {
   height: 200px;
@@ -39,6 +44,7 @@
   border: none;
   font-weight: 300;
   font-size: 15px;
+  cursor: pointer;
 }
 .dog-main-box article:last-child button:hover {
   transition: 400ms;

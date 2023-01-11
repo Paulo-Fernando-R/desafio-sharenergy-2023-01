@@ -2,6 +2,7 @@ import SideMenu from "../../components/side-menu/side-menu"
 import './root-page.css'
 import MainPage from "../main-page/main-page"
 import CatPage from "../cat-page/cat-page"
+import DogPage from "../dog-page/dog-page"
 import { useEffect, useState } from "react"
 
 export default function RootPage (props){
@@ -27,7 +28,7 @@ const Content = () => {
     }
     else{
         return(
-            <MainPage/>
+            <DogPage/>
         )
     }
 }

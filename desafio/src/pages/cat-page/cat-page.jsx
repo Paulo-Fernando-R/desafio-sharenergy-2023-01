@@ -1,6 +1,5 @@
 import './cat-page.css'
 import '../../global-style.css'
-import pana from '../../assets/pana.png'
 import { useEffect, useState } from 'react'
 import { Audio } from 'react-loader-spinner'
 

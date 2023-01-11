@@ -1,0 +1,51 @@
+.dog-main-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    width: 100%;
+
+    article{
+        width: 100%;
+        //padding: 20px;
+        height: 100px;
+
+        h1{
+            padding: 20px;
+        }
+    }
+
+    section{
+        display: flex;
+        justify-content: center;
+
+        img{
+            width: 60%;
+        }
+
+    }
+
+    article:last-child{
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            transition: 400ms;
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: #2F2F3B;
+            border-radius: 15px;
+            border: none;
+            font-weight: 300;
+            font-size: 15px;
+        }
+        button:hover{
+            transition: 400ms;
+            transform: scale(1.005);
+        }
+    }
+}

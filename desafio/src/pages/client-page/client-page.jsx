@@ -2,6 +2,7 @@ import '../../global-style.css'
 import './client-page.css'
 import { useEffect, useState } from 'react'
 import { Audio } from 'react-loader-spinner'
+import ClientCard from './components/client-card-component'
 
 export default function ClientPage(props){
 
@@ -20,7 +21,7 @@ export default function ClientPage(props){
         <div className='client-main-box'>
             <nav className='input-main-box'>
                 <article>
-                    <h1>Escolha um status qualquer</h1>
+                    <h1>Cadastrar clientes</h1>
                 </article>
 
                 <section>
@@ -70,6 +71,14 @@ export default function ClientPage(props){
             </nav>
 
             <nav className='list-main-box'>
+                <article>
+                    <h1>Clientes cadastrados</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                         illo quidem iste omnis ipsam dolorem placeat, tempora autem, minus, 
+                         eos quia architecto recusandae sit corrupti a ratione dolorum velit sint!
+                    </p>
+                </article>
+
                 {
                     loading?
                     <div className="loading-box">
@@ -84,7 +93,12 @@ export default function ClientPage(props){
                     />
                     </div>
                     :
-                   <>o que deve ter</>
+                   <div className='list-box'>
+                    <ClientCard/>
+                    <ClientCard/>
+                    <ClientCard/>
+                    <ClientCard/>
+                   </div>
                 }
             </nav>
         </div>

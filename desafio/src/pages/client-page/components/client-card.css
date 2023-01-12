@@ -1,0 +1,94 @@
+.card-main-box {
+  transition: 400ms;
+  transition: 400ms;
+  border: rgba(204, 204, 204, 0.5) solid 1px;
+  border-radius: 20px;
+  width: 400px;
+  max-width: 500px;
+  height: 320px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.card-main-box .name-box {
+  height: 30%;
+}
+.card-main-box .name-box h3 {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+.card-main-box .info-box {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-main-box .info-box ul {
+  width: 80%;
+}
+.card-main-box .info-box ul li, .card-main-box .info-box ul p {
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  background-color: rgba(204, 204, 204, 0.5);
+  margin-bottom: 10px;
+  border-radius: 30px;
+  padding: 10px;
+}
+.card-main-box .info-box ul p {
+  overflow: auto;
+  white-space: unset;
+  text-overflow: unset;
+  padding: 20px;
+}
+.card-main-box .info-box ul:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+.card-main-box .info-box ul:first-child li {
+  width: 40%;
+}
+.card-main-box .info-box ul:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-main-box .info-box ul:last-child li {
+  width: 94%;
+}
+.card-main-box .info-box ul:last-child li:nth-child(1):hover {
+  -webkit-animation: maximize 300ms forwards;
+          animation: maximize 300ms forwards;
+  overflow: visible;
+}
+@-webkit-keyframes maximize {
+  from {
+    width: 94%;
+  }
+  to {
+    width: 105%;
+  }
+}
+@keyframes maximize {
+  from {
+    width: 94%;
+  }
+  to {
+    width: 105%;
+  }
+}
+
+.card-main-box:hover {
+  transition: 400ms;
+  box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
+  border-radius: 20px;
+  transform: scale(1.005);
+}/*# sourceMappingURL=client-card.css.map */

@@ -9,7 +9,7 @@ import save from './functions/save-data'
 import destroy from './functions/delete-data'
 import update from './functions/update-data'
 
-export default function ClientPage(props){
+export default function ClientPage(props) {
 
     const [loading, setLoading] = useState(false)
     const [id, setId] = useState('');
@@ -32,36 +32,32 @@ export default function ClientPage(props){
         console.log(edit)
     }
 
-    
     const submit = async () => {
-        if(handleSubmit(name, email, phone, address, cpf) === 'empty-fields'){
+        if (handleSubmit(name, email, phone, address, cpf) === 'empty-fields') {
             alert('Preencha todos os campos');
             return
         }
 
-        if(handleSubmit(name, email, phone, address, cpf) === 'invalid-cpf'){
+        if (handleSubmit(name, email, phone, address, cpf) === 'invalid-cpf') {
             alert('Insira um CPF válido');
             return
         }
 
-        if(!edit)
-        {
+        if (!edit) {
             setLoading(true);
             await save(name, email, phone, address, cpf);
             setLoading(false);
-            await load();
         }
-        else if(edit){
+        else if (edit) {
             setLoading(true);
             await update(id, name, email, phone, address, cpf)
             setEdit(false)
             setLoading(false);
-            await load();
         }
-        var temp ='';
+        var temp = '';
         click(temp, temp, temp, temp, temp, temp, temp);
+        await load();
     }
-    
 
     const deleteSubmit = async () => {
         setLoading(true);
@@ -70,18 +66,19 @@ export default function ClientPage(props){
         await load();
     }
 
-    const load = async() => {
+    const load = async () => {
         setLoading(true);
+        setItens([]);
         const data = await fetchData();
         setLoading(false);
         setItens(data);
     }
 
     useEffect(() => {
-        
+
         load();
-    },[])
-    
+    }, [])
+
     return (
         <div className='client-main-box'>
             <nav className='input-main-box'>
@@ -90,53 +87,53 @@ export default function ClientPage(props){
                 </article>
 
                 <section>
-                <form onSubmit={() => {
-                    handleSubmit(name, email, phone, address, cpf) 
-                }}>
-                        <input 
-                            required 
-                            type="text" 
+                    <form onSubmit={() => {
+                        handleSubmit(name, email, phone, address, cpf)
+                    }}>
+                        <input
+                            required
+                            type="text"
                             placeholder="Nome"
                             value={name}
-                            onChange={(e) => {setname(e.target.value)}}
+                            onChange={(e) => { setname(e.target.value) }}
                         />
 
-                         <input 
-                            required 
-                            type="email" 
+                        <input
+                            required
+                            type="email"
                             placeholder="E-mail"
                             value={email}
-                            onChange={(e) => {setEmail(e.target.value)}}
+                            onChange={(e) => { setEmail(e.target.value) }}
                         />
 
-                         <input 
-                            required 
-                            type="number" 
+                        <input
+                            required
+                            type="number"
                             placeholder="Telefone"
                             value={phone}
-                            onChange={(e) => {setPhone(e.target.value)}}
+                            onChange={(e) => { setPhone(e.target.value) }}
                         />
 
-                         <input 
-                            required 
-                            type="text" 
+                        <input
+                            required
+                            type="text"
                             placeholder="Endereço"
                             value={address}
-                            onChange={(e) => {setAddress(e.target.value)}}
+                            onChange={(e) => { setAddress(e.target.value) }}
                         />
 
-                         <input 
-                            required 
-                            type="number" 
+                        <input
+                            required
+                            type="number"
                             placeholder="CPF"
                             value={cpf}
-                            onChange={(e) => {setCpf(e.target.value)}}
+                            onChange={(e) => { setCpf(e.target.value) }}
                         />
                         <div className='button-box'>
                             <button type="button" onClick={submit}>Salvar</button>
                             <button type="button" onClick={deleteSubmit}>Excluir</button>
                         </div>
-                        
+
                     </form>
                 </section>
             </nav>
@@ -145,52 +142,49 @@ export default function ClientPage(props){
                 <article>
                     <h1>Clientes cadastrados</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-                         illo quidem iste omnis ipsam dolorem placeat, tempora autem, minus, 
-                         eos quia architecto recusandae sit corrupti a ratione dolorum velit sint!
+                        illo quidem iste omnis ipsam dolorem placeat, tempora autem, minus,
+                        eos quia architecto recusandae sit corrupti a ratione dolorum velit sint!
                     </p>
                 </article>
 
                 {
-                    loading?
-                    <div className="loading-box">
-                        <Audio
-                        height="80"
-                        width="80"
-                        radius="9"
-                        color="#2F2F3B"
-                        ariaLabel="loading"
-                        wrapperStyle
-                        wrapperClass
-                    />
-                    </div>
-                    :
-                   <div className='list-box'>
-                    {
-                        !edit?
-                        itens.map((item) => {
-                            return<ClientCard 
-                            key={item._id} 
-                            client={item} 
-                            click={click} 
-                            edit={edit} 
-                            setEdit={setEdit}
+                    loading ?
+                        <div className="loading-box">
+                            <Audio
+                                height="80"
+                                width="80"
+                                radius="9"
+                                color="#2F2F3B"
+                                ariaLabel="loading"
+                                wrapperStyle
+                                wrapperClass
                             />
-                        }).reverse()
+                        </div>
                         :
-                        itens.map((item) => {
-                            if(item._id === id)
+                        <div className='list-box'>
                             {
-                                return<ClientCard 
-                                key={item._id} 
-                                client={item} 
-                                click={click} 
-                                edit={edit} 
-                                setEdit={setEdit}
-                                />
+                                !edit ?
+                                    itens.map((item) => {
+                                        return <ClientCard
+                                            key={item._id}
+                                            client={item}
+                                            click={click}
+                                            setEdit={setEdit}
+                                        />
+                                    }).reverse()
+                                    :
+                                    itens.map((item) => {
+                                        if (item._id === id) {
+                                            return <ClientCard
+                                                key={item._id}
+                                                client={item}
+                                                click={click}
+                                                setEdit={setEdit}
+                                            />
+                                        }
+                                    })
                             }
-                        })
-                    }
-                   </div>
+                        </div>
                 }
             </nav>
         </div>

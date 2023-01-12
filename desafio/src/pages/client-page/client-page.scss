@@ -1,7 +1,7 @@
-.client-main-box{
+.client-main-box {
     display: flex;
-    
-    .input-main-box{
+
+    .input-main-box {
         height: 100vh;
         width: 40%;
         display: flex;
@@ -10,23 +10,23 @@
         min-height: 100vh;
         max-width: 500px;
 
-        article{
+        article {
             width: 100%;
             padding: 20px;
             height: 100px;
         }
 
-        section{
+        section {
             width: 100%;
             display: flex;
 
-            form{
+            form {
                 width: 100%;
                 padding: 20px;
                 display: flex;
                 flex-direction: column;
 
-                input{
+                input {
                     transition: 400ms;
                     color: #666;
                     height: 30px;
@@ -35,21 +35,23 @@
                     padding: 10px;
                     border: rgba(204, 204, 204, 0.5) solid 1px;
                 }
-                input:focus{
+
+                input:focus {
                     outline: none;
                     transition: 400ms;
                     box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
-                    
+
                     transform: scale(1.005);
                 }
-                .button-box{
+
+                .button-box {
                     width: 100%;
                     //background-color: red;
                     display: flex;
                     justify-content: space-around;
                 }
 
-                button{
+                button {
                     transition: 400ms;
                     background-color: #2F2F3B;
                     color: white;
@@ -62,14 +64,17 @@
                     width: 45%;
                     max-width: 200px;
                 }
-                button:last-child{
+
+                button:last-child {
                     background-color: rgb(158, 18, 18);
                 }
-                button:hover{
+
+                button:hover {
                     transition: 400ms;
                     transform: scale(0.95);
                 }
-                button:active{
+
+                button:active {
                     transition: 400ms;
                     transform: scale(1);
                 }
@@ -77,40 +82,42 @@
         }
     }
 
-    .list-main-box{
+    .list-main-box {
         width: 100%;
         height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         overflow-y: scroll;
-        article{
-            h1{
+
+        article {
+            h1 {
                 padding: 20px;
             }
-            p{
+
+            p {
                 padding: 20px;
                 padding-top: 0px;
             }
         }
 
-        .list-box{
+        .list-box {
             max-width: 100%;
             padding: 20px;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
-           // grid-auto-rows: minmax(270px, auto);
+            // grid-auto-rows: minmax(270px, auto);
         }
 
     }
 }
 
 @media screen and (max-width: 900px) {
-    .client-main-box{
+    .client-main-box {
         flex-direction: column;
 
-        .input-main-box{
+        .input-main-box {
             height: 50vh;
             width: 100%;
             display: flex;
@@ -120,21 +127,21 @@
             padding-bottom: 20px;
             border-right: none;
 
-            article{
+            article {
                 width: 100%;
                 padding: 0;
                 height: 100px;
-                
-                h1{
+
+                h1 {
                     text-align: center;
                 }
             }
 
-            section{
+            section {
                 width: 100%;
                 display: flex;
-    
-                form{
+
+                form {
                     width: 100%;
                     padding: 20px;
                     display: flex;
@@ -144,22 +151,20 @@
             }
         }
 
-        .list-main-box{
-        
-        }
+        .list-main-box {}
     }
-    
+
 }
 
 @media screen and (orientation: portrait) {
 
-    .client-main-box{
+    .client-main-box {
         height: 150vh;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    .input-main-box{
+    .input-main-box {
 
         height: fit-content;
         width: 100%;
@@ -167,23 +172,23 @@
         min-height: fit-content;
         margin-bottom: 30px;
 
-        article{
+        article {
             width: 100%;
             padding: 20px;
             height: 100px;
         }
 
-        section{
+        section {
             width: 100%;
             display: flex;
 
-            form{
+            form {
                 width: 100%;
                 padding: 20px;
                 display: flex;
                 flex-direction: column;
 
-                input{
+                input {
                     transition: 400ms;
                     color: #666;
                     height: 30px;
@@ -193,30 +198,32 @@
                     padding: 10px;
                     border: rgba(204, 204, 204, 0.5) solid 1px;
                 }
-                button{
+
+                button {
                     width: 150px;
                 }
             }
         }
     }
 
-    .list-main-box{
+    .list-main-box {
         height: 80vh;
         margin-bottom: 10vh;
         overflow-y: scroll;
-        article{
+
+        article {
             //display: none;
         }
     }
 }
 
 @media screen and(min-width: 1800px) {
-    .list-box{
+    .list-box {
         max-width: 100%;
         padding: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    
+
 }

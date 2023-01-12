@@ -41,7 +41,8 @@
 .card-main-box .info-box ul {
   width: 80%;
 }
-.card-main-box .info-box ul li, .card-main-box .info-box ul p {
+.card-main-box .info-box ul li,
+.card-main-box .info-box ul p {
   list-style: none;
   overflow: hidden;
   white-space: nowrap;
@@ -59,6 +60,7 @@
   white-space: unset;
   text-overflow: unset;
   padding: 20px;
+  width: 94%;
 }
 .card-main-box .info-box ul:first-child {
   display: flex;

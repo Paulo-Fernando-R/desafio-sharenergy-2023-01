@@ -6,7 +6,7 @@ import '../../global-style.css'
 import CardComponent from "./components/card-component";
 import { Audio } from 'react-loader-spinner'
 
-export default function MainPage(props){
+export default function MainPage(props) {
     const [itens, setItens] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
     const [search, setSeach] = useState('')
@@ -21,64 +21,63 @@ export default function MainPage(props){
     const seachUser = () => {
         let temp = []
         itens.forEach((item) => {
-            if(item.email.includes(search)){
+            if (item.email.includes(search)) {
                 temp.push(item)
             }
         })
         setSearchItens(temp)
     }
 
-    const fetchData = async() => {
+    const fetchData = async () => {
         setLoading(true)
-        try{
+        try {
             const response = await fetch('https://randomuser.me/api/?page=3&results=60&seed=abc');
             const json = await response.json();
             setItens(json.results)
         }
-        catch(e){
+        catch (e) {
             console.log('erro')
         }
         setLoading(false)
     }
 
     useEffect(() => {
-        
+
         fetchData()
     }, [])
 
-    if(loading)
-    {
-        return(
+    if (loading) {
+        return (
             <div className="loading-box">
                 <Audio
-                height="80"
-                width="80"
-                radius="9"
-                color="#2F2F3B"
-                ariaLabel="loading"
-                wrapperStyle
-                wrapperClass
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="#2F2F3B"
+                    ariaLabel="loading"
+                    wrapperStyle
+                    wrapperClass
                 />
             </div>
-            
+
         )
     }
-    else{
-        return(
+    else {
+        return (
             <div className="home-main-box">
                 <nav>
                     <article>
                         <h1>Usuários disponíveis</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                             Libero earum deleniti neque atque veniam suscipit alias qui
                         </p>
-                        <input 
-                            type="text" 
-                            placeholder="Pesquisa" 
+                        <input
+                            type="text"
+                            placeholder="Pesquisa"
                             value={search}
                             onChange={(e) => {
                                 setSeach(e.target.value)
-                                if(search.length > 2)
+                                if (search.length > 2)
                                     seachUser()
                             }}
                         />
@@ -86,49 +85,49 @@ export default function MainPage(props){
 
                     <section className="align-box">
                         <div>
-                        
+
                             {
-                                search.length < 3?
-                                currentItens.map(item => {
-                                    return <CardComponent key={item.login.uuid} item={item}/>
-                                })
-                                :
-                                searchItens.map(item => {
-                                    return <CardComponent key={item.login.uuid} item={item}/>
-                                })
+                                search.length < 3 ?
+                                    currentItens.map(item => {
+                                        return <CardComponent key={item.login.uuid} item={item} />
+                                    })
+                                    :
+                                    searchItens.map(item => {
+                                        return <CardComponent key={item.login.uuid} item={item} />
+                                    })
                             }
                         </div>
                     </section>
 
                     {
-                    search.length < 3?
-                    <div className="controls-box">
-                        <button
-                            onClick={(e) => {
-                                if(currentPage > 0){
-                                    setCurrentPage(currentPage - 1)
-                                }
-                            }}
-                        >
-                            Anterior
-                        </button>
+                        search.length < 3 ?
+                            <div className="controls-box">
+                                <button
+                                    onClick={(e) => {
+                                        if (currentPage > 0) {
+                                            setCurrentPage(currentPage - 1)
+                                        }
+                                    }}
+                                >
+                                    Anterior
+                                </button>
 
-                        <h4>{currentPage + 1}</h4>
+                                <h4>{currentPage + 1}</h4>
 
-                        <button
-                            onClick={(e) => {
-                                if(currentPage < pages){
-                                    setCurrentPage(currentPage + 1)
-                                }
-                            }}
-                        >   
-                            Próxima
-                        </button>
-                    </div>
-                    :
-                    <></>
+                                <button
+                                    onClick={(e) => {
+                                        if (currentPage < pages) {
+                                            setCurrentPage(currentPage + 1)
+                                        }
+                                    }}
+                                >
+                                    Próxima
+                                </button>
+                            </div>
+                            :
+                            <></>
                     }
-                    
+
                 </nav>
             </div>
         )

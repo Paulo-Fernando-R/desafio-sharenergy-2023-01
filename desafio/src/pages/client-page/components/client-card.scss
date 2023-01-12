@@ -1,4 +1,4 @@
-.edit-button{
+.edit-button {
     width: 100%;
     height: 40px;
     background-color: green;
@@ -9,7 +9,7 @@
     margin-bottom: 0;
 }
 
-.card-main-box{
+.card-main-box {
     transition: 400ms;
     transition: 400ms;
     border: rgba(204, 204, 204, 0.5) solid 1px;
@@ -24,24 +24,27 @@
     overflow: hidden;
     justify-content: space-between;
 
-    .name-box{
+    .name-box {
         height: 30%;
-        h3{
+
+        h3 {
             width: 100%;
             text-align: center;
             padding-top: 20px;
         }
     }
 
-    .info-box{
+    .info-box {
         height: 70%;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        ul{
+        ul {
             width: 80%;
-            li, p{
+
+            li,
+            p {
                 list-style: none;
                 overflow: hidden;
                 white-space: nowrap;
@@ -54,38 +57,45 @@
                 border-radius: 30px;
                 padding: 10px;
             }
-           
-            p{
+
+            p {
                 overflow: auto;
                 white-space: unset;
                 text-overflow: unset;
                 padding: 20px;
+                width: 94%;
             }
         }
 
-        ul:first-child{
+        ul:first-child {
             display: flex;
             justify-content: space-between;
-            li{
+
+            li {
                 width: 40%;
             }
         }
-        ul:last-child{
+
+        ul:last-child {
             display: flex;
             flex-direction: column;
             align-items: center;
-            li{
+
+            li {
                 width: 94%;
             }
+
             li:nth-child(1):hover {
                 animation: maximize 300ms forwards;
                 overflow: visible;
             }
+
             @keyframes maximize {
-                from{
+                from {
                     width: 94%;
                 }
-                to{
+
+                to {
                     width: 105%;
                 }
             }
@@ -93,7 +103,7 @@
     }
 }
 
-.card-main-box:hover{
+.card-main-box:hover {
     transition: 400ms;
     box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
     border-radius: 20px;

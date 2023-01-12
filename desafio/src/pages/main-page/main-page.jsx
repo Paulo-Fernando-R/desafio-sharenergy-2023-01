@@ -19,7 +19,6 @@ export default function MainPage(props) {
 
 
     const seachUser = (searchWord) => {
-        setSeach(searchWord)
         let temp = []
         itens.forEach((item) => {
             if (item.email.includes(searchWord)) {
@@ -75,16 +74,11 @@ export default function MainPage(props) {
                         <input
                             type="text"
                             placeholder="Pesquisa"
-                            //value={search}
-                            onChange={(e) => {/*
+                            onChange={(e) => {
+                                var search = e.target.value;
                                 setSeach(e.target.value)
-                                if (search.length > 2)
-                                    seachUser()*/
-                                    var search = e.target.value;
-                                    if (search.length > 2) {
-                                        setSeach(e.target.value)
-                                    seachUser(search)
-                                    }
+                                seachUser(search)
+                                console.log(search)
                             }}
                         />
                     </article>

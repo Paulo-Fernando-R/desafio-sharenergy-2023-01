@@ -29,7 +29,6 @@ export default function ClientPage(props) {
         setAddress(address);
         setCpf(cpf);
         setEdit(edit)
-        console.log(edit)
     }
 
     const submit = async () => {
@@ -55,15 +54,18 @@ export default function ClientPage(props) {
             setLoading(false);
         }
         var temp = '';
-        click(temp, temp, temp, temp, temp, temp, temp);
+        click(temp, temp, temp, temp, temp, temp, false);
         await load();
     }
 
     const deleteSubmit = async () => {
         setLoading(true);
         await destroy(id);
+        var temp = '';
+        click(temp, temp, temp, temp, temp, temp, false);
         setLoading(false);
         await load();
+
     }
 
     const load = async () => {

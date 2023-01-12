@@ -17,12 +17,6 @@ async function destroy(id) {
     catch (err) {
         alert('Erro ao excluir');
     }
-
-
-    /*
-    .then(response => response.json())
-    .then(data => alert('Cliente excluído com sucesso.'))
-    .catch(error => console.log('Não foi possível excluir.'))*/
 }
 export default destroy
 

@@ -40,6 +40,11 @@
   box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
   transform: scale(1.005);
 }
+.client-main-box .input-main-box section form .button-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 .client-main-box .input-main-box section form button {
   transition: 400ms;
   background-color: #2F2F3B;
@@ -50,6 +55,11 @@
   border-radius: 15px;
   margin-bottom: 0;
   margin-top: 20px;
+  width: 45%;
+  max-width: 200px;
+}
+.client-main-box .input-main-box section form button:last-child {
+  background-color: rgb(158, 18, 18);
 }
 .client-main-box .input-main-box section form button:hover {
   transition: 400ms;

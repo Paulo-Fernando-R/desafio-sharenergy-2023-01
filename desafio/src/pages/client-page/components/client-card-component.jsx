@@ -1,21 +1,34 @@
 import '../../../global-style.css'
 import './client-card.css'
 
-export default function ClientCard(){
+export default function ClientCard(props){
     return(
-        <div className='card-main-box'>
+        <div
+        className='card-main-box'
+            onClick={(e) => {
+                //name, email, phone, address, cpf)
+                props.click(
+                    props.client._id,
+                    props.client.name,
+                    props.client.email,
+                    props.client.phone,
+                    props.client.address,
+                    props.client.cpf
+                )
+            }}
+        >
             <section className='name-box'>
-                <h3>Ana Maria Braga de Souza e Almeida Costa Bittencourt de Jesus</h3>
+                <h3>{props.client.name}</h3>
             </section>
 
             <section className='info-box'>
                 <ul>
-                    <li>11653041633</li>
-                    <li>(33) 9 8863 1079</li>
+                    <li>{props.client.cpf}</li>
+                    <li>{props.client.phone}</li>
                 </ul>
                 <ul>
-                    <li>paulofernando.r100%cruzeiro1238852@gmail.com</li>
-                    <p>Avenida da Eu amo sambiquira n. 78945, Bairro da loucurada dos sambiquiras, São Joao Evangelista Minas Gerais Brasil</p>
+                    <li>{props.client.email}</li>
+                    <p>{props.client.address}</p>
                 </ul>
             </section>
         </div>

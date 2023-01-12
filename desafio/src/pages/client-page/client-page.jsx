@@ -3,10 +3,14 @@ import './client-page.css'
 import { useEffect, useState } from 'react'
 import { Audio } from 'react-loader-spinner'
 import ClientCard from './components/client-card-component'
+import fetchData from './functions/fetch-data'
+import handleSubmit from './functions/hande-submit'
+import save from './functions/save-data'
 
 export default function ClientPage(props){
 
     const [loading, setLoading] = useState(false)
+    const [id, setId] = useState();
     const [name, setname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState();
@@ -14,35 +18,56 @@ export default function ClientPage(props){
     const [cpf, setCpf] = useState('');
     const [itens, setItens] = useState([]);
 
-    function handleSubmit(){
-
+    const click = (id, name, email, phone, address, cpf) => {
+        setId(id);
+        setname(name);
+        setEmail(email);
+        setPhone(phone);
+        setAddress(address);
+        setCpf(cpf);
     }
 
-    async function fetchData (){
-        ///setLoading(true)
-       /* try{
-            const response = await fetch('http://localhost:3333/clients');
-            const json = await response.json();
-            setItens(json)
-            console.log(json)
+    
+    const submit = () => {
+        if(handleSubmit(name, email, phone, address, cpf) === 'empty-fields'){
+            alert('Preencha todos os campos');
+            return
         }
-        catch (e){
-            setItens(null)
+
+        if(handleSubmit(name, email, phone, address, cpf) === 'invalid-cpf'){
+            alert('Insira um CPF válido');
+            return
         }
-        finally{
-            setLoading(false)
-        }*/
 
-        const options = {method: 'GET'};
+        //alert(handleSubmit(name, email, phone, address, cpf));
 
-        fetch('http://localhost:3333/clients', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        async function newUser(){
+            setLoading(true);
+            if(await save(name, email, phone, address, cpf)){
+                alert('Cadastrado com sucesso');
+            }
+            else{
+                alert('Erro interno');
+            }
+            setLoading(false);
+            await load();
+        }
+        newUser();
+
+        var temp ='';
+        click(temp, temp, temp, temp, temp, temp);
+    }
+
+    const load = async() => {
+        setLoading(true);
+        const data = await fetchData();
+        setLoading(false);
+        setItens(data);
     }
 
     useEffect(() => {
-        //fetchData();
+        
+        load();
     },[])
     
     return (
@@ -53,7 +78,9 @@ export default function ClientPage(props){
                 </article>
 
                 <section>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={() => {
+                    handleSubmit(name, email, phone, address, cpf) 
+                }}>
                         <input 
                             required 
                             type="text" 
@@ -93,7 +120,11 @@ export default function ClientPage(props){
                             value={cpf}
                             onChange={(e) => {setCpf(e.target.value)}}
                         />
-                        <button type="button" onClick={(e) => {fetchData()}}>Entrar</button>
+                        <div className='button-box'>
+                            <button type="button" onClick={submit}>Salvar</button>
+                            <button type="button" onClick={(e) => {fetchData()}}>Excluir</button>
+                        </div>
+                        
                     </form>
                 </section>
             </nav>
@@ -122,10 +153,11 @@ export default function ClientPage(props){
                     </div>
                     :
                    <div className='list-box'>
-                    <ClientCard/>
-                    <ClientCard/>
-                    <ClientCard/>
-                    <ClientCard/>
+                    {
+                        itens.map((item) => {
+                            return<ClientCard key={item._id} client={item} click={click}/>
+                        })
+                    }
                    </div>
                 }
             </nav>

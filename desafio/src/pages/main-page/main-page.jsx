@@ -7,7 +7,6 @@ import CardComponent from "./components/card-component";
 import { Audio } from 'react-loader-spinner'
 
 export default function MainPage(props){
-    const [cookie, setCookie, removeCoockie] = useCookies()
     const [itens, setItens] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
     const [search, setSeach] = useState('')
@@ -27,7 +26,6 @@ export default function MainPage(props){
             }
         })
         setSearchItens(temp)
-        console.log(searchItens)
     }
 
     const fetchData = async() => {
@@ -36,7 +34,6 @@ export default function MainPage(props){
             const response = await fetch('https://randomuser.me/api/?page=3&results=60&seed=abc');
             const json = await response.json();
             setItens(json.results)
-            //console.log(json.results);
         }
         catch(e){
             console.log('erro')
@@ -48,11 +45,6 @@ export default function MainPage(props){
         
         fetchData()
     }, [])
-
-    if(cookie.login == null)
-    {
-        return <Navigate to="login"/>
-    }
 
     if(loading)
     {

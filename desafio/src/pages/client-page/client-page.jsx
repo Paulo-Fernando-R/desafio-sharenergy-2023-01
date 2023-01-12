@@ -6,11 +6,12 @@ import ClientCard from './components/client-card-component'
 import fetchData from './functions/fetch-data'
 import handleSubmit from './functions/hande-submit'
 import save from './functions/save-data'
+import destroy from './functions/delete-data'
 
 export default function ClientPage(props){
 
     const [loading, setLoading] = useState(false)
-    const [id, setId] = useState();
+    const [id, setId] = useState('');
     const [name, setname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState();
@@ -38,17 +39,10 @@ export default function ClientPage(props){
             alert('Insira um CPF válido');
             return
         }
-
         //alert(handleSubmit(name, email, phone, address, cpf));
-
         async function newUser(){
             setLoading(true);
-            if(await save(name, email, phone, address, cpf)){
-                alert('Cadastrado com sucesso');
-            }
-            else{
-                alert('Erro interno');
-            }
+            await save(name, email, phone, address, cpf);
             setLoading(false);
             await load();
         }
@@ -57,6 +51,16 @@ export default function ClientPage(props){
         var temp ='';
         click(temp, temp, temp, temp, temp, temp);
     }
+
+    const deleteSubmit = async () => {
+        setLoading(true);
+        await destroy(id);
+        setLoading(false);
+        await load();
+        
+    }
+
+
 
     const load = async() => {
         setLoading(true);
@@ -122,7 +126,7 @@ export default function ClientPage(props){
                         />
                         <div className='button-box'>
                             <button type="button" onClick={submit}>Salvar</button>
-                            <button type="button" onClick={(e) => {fetchData()}}>Excluir</button>
+                            <button type="button" onClick={deleteSubmit}>Excluir</button>
                         </div>
                         
                     </form>
@@ -154,7 +158,7 @@ export default function ClientPage(props){
                     :
                    <div className='list-box'>
                     {
-                        itens.map((item) => {
+                        itens.reverse().map((item) => {
                             return<ClientCard key={item._id} client={item} click={click}/>
                         })
                     }

@@ -16,10 +16,10 @@ async function save(name, email, phone, address, cpf){
     })
     .then(response => response.json())
     .then(data => {
-        return true;
+        alert('Cadastrado com sucesso');
     })
     .catch(error => {
-        return false;
+        alert('Erro interno');
     })
 }
 

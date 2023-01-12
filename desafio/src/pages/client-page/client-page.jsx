@@ -7,6 +7,7 @@ import fetchData from './functions/fetch-data'
 import handleSubmit from './functions/hande-submit'
 import save from './functions/save-data'
 import destroy from './functions/delete-data'
+import update from './functions/update-data'
 
 export default function ClientPage(props){
 
@@ -18,18 +19,21 @@ export default function ClientPage(props){
     const [address, setAddress] = useState('');
     const [cpf, setCpf] = useState('');
     const [itens, setItens] = useState([]);
+    const [edit, setEdit] = useState(false)
 
-    const click = (id, name, email, phone, address, cpf) => {
+    const click = (id, name, email, phone, address, cpf, edit) => {
         setId(id);
         setname(name);
         setEmail(email);
         setPhone(phone);
         setAddress(address);
         setCpf(cpf);
+        setEdit(edit)
+        console.log(edit)
     }
 
     
-    const submit = () => {
+    const submit = async () => {
         if(handleSubmit(name, email, phone, address, cpf) === 'empty-fields'){
             alert('Preencha todos os campos');
             return
@@ -39,28 +43,32 @@ export default function ClientPage(props){
             alert('Insira um CPF válido');
             return
         }
-        //alert(handleSubmit(name, email, phone, address, cpf));
-        async function newUser(){
+
+        if(!edit)
+        {
             setLoading(true);
             await save(name, email, phone, address, cpf);
             setLoading(false);
             await load();
         }
-        newUser();
-
+        else if(edit){
+            setLoading(true);
+            await update(id, name, email, phone, address, cpf)
+            setEdit(false)
+            setLoading(false);
+            await load();
+        }
         var temp ='';
-        click(temp, temp, temp, temp, temp, temp);
+        click(temp, temp, temp, temp, temp, temp, temp);
     }
+    
 
     const deleteSubmit = async () => {
         setLoading(true);
         await destroy(id);
         setLoading(false);
         await load();
-        
     }
-
-
 
     const load = async() => {
         setLoading(true);
@@ -158,8 +166,28 @@ export default function ClientPage(props){
                     :
                    <div className='list-box'>
                     {
-                        itens.reverse().map((item) => {
-                            return<ClientCard key={item._id} client={item} click={click}/>
+                        !edit?
+                        itens.map((item) => {
+                            return<ClientCard 
+                            key={item._id} 
+                            client={item} 
+                            click={click} 
+                            edit={edit} 
+                            setEdit={setEdit}
+                            />
+                        }).reverse()
+                        :
+                        itens.map((item) => {
+                            if(item._id === id)
+                            {
+                                return<ClientCard 
+                                key={item._id} 
+                                client={item} 
+                                click={click} 
+                                edit={edit} 
+                                setEdit={setEdit}
+                                />
+                            }
                         })
                     }
                    </div>

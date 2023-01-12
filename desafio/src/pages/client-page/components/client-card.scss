@@ -1,3 +1,14 @@
+.edit-button{
+    width: 100%;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
 .card-main-box{
     transition: 400ms;
     transition: 400ms;
@@ -12,6 +23,7 @@
     padding: 10px;
     overflow: hidden;
     justify-content: space-between;
+
     .name-box{
         height: 30%;
         h3{

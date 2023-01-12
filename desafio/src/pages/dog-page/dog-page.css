@@ -50,5 +50,9 @@
 }
 .dog-main-box article:last-child button:hover {
   transition: 400ms;
-  transform: scale(1.005);
+  transform: scale(0.95);
+}
+.dog-main-box article:last-child button:active {
+  transition: 400ms;
+  transform: scale(1);
 }/*# sourceMappingURL=dog-page.css.map */

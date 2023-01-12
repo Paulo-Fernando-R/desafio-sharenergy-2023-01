@@ -54,8 +54,12 @@
         }
         button:hover{
             transition: 400ms;
-            transform: scale(1.005);
+            transform: scale(0.95);
             
+        }
+        button:active{
+            transition: 400ms;
+            transform: scale(1);
         }
     }
 }

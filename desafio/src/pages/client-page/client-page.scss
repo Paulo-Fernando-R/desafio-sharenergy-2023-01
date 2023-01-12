@@ -1,0 +1,125 @@
+.client-main-box{
+    display: flex;
+
+    .input-main-box{
+        height: 100vh;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        border-right: rgba(204, 204, 204, 0.5) solid 2px;
+        min-height: 100vh;
+        max-width: 500px;
+
+        article{
+            width: 100%;
+            padding: 20px;
+            height: 100px;
+        }
+
+        section{
+            width: 100%;
+            display: flex;
+
+            form{
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+
+                input{
+                    transition: 400ms;
+                    color: #666;
+                    height: 30px;
+                    margin-bottom: 20px;
+                    border-radius: 15px;
+                    padding: 10px;
+                    border: rgba(204, 204, 204, 0.5) solid 1px;
+                }
+                input:focus{
+                    outline: none;
+                    transition: 400ms;
+                    box-shadow: rgba(204, 204, 204, 0.5) 0px 0px 5px 1px;
+                    
+                    transform: scale(1.005);
+                }
+
+                button{
+                    transition: 400ms;
+                    background-color: #2F2F3B;
+                    color: white;
+                    height: 45px;
+                    outline: none;
+                    border: none;
+                    border-radius: 15px;
+                    margin-bottom: 0;
+                    margin-top: 20px;
+                }
+                button:hover{
+                    transition: 400ms;
+                    transform: scale(0.95);
+                }
+                button:active{
+                    transition: 400ms;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .list-main-box{
+
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .client-main-box{
+        flex-direction: column-reverse;
+
+        .input-main-box{
+            height: 50vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            min-height: auto;
+            padding-bottom: 20px;
+            border-right: none;
+
+            article{
+                width: 100%;
+                padding: 0;
+                height: 100px;
+                
+                h1{
+                    text-align: center;
+                }
+            }
+
+            section{
+                width: 100%;
+                display: flex;
+                overflow-y: scroll;
+    
+                form{
+                    width: 100%;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                  
+                }
+            }
+        }
+
+        .list-main-box{
+        
+        }
+    }
+    
+}
+
+@media screen and (orientation: portrait) {
+
+    
+}

@@ -1,4 +1,4 @@
-async function save(name, email, phone, address, cpf){
+async function save(name, email, phone, address, cpf) {
     const data = {
         name: name,
         email: email,
@@ -7,20 +7,20 @@ async function save(name, email, phone, address, cpf){
         cpf: cpf
     }
 
-    fetch('http://localhost:3333/clients', {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
+    try {
+        const response = await fetch('http://localhost:3333/clients', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const json = await response.json();
         alert('Cadastrado com sucesso');
-    })
-    .catch(error => {
+    }
+    catch (err) {
         alert('Erro interno');
-    })
+    }
 }
 
 export default save

@@ -6,16 +6,21 @@ async function update(id, name, email, phone, address, cpf) {
         address: address,
         cpf: cpf
     }
-    fetch(`http://localhost:3333/clients/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => response.json())
-        .then(data => alert('Atualizado com sucesso'))
-        .catch(error => console.log(error))
+
+    try {
+        const response = await fetch(`http://localhost:3333/clients/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        const json = response.json();
+        alert('Atualizado com sucesso')
+    }
+    catch (err) {
+        alert('Erro ao atualizar')
+    }
 }
 
 export default update;

@@ -52,10 +52,10 @@ class ClientController {
             const { id } = req.params;
             await ClientModel.findByIdAndUpdate(id, req.body);
 
-            return res.status(200).jason({message: "Client updated"});
+            return res.status(200).json({message: "Client updated"});
 
         } catch (error) {
-            return res.status(404).json({message: "Failed to update client. Verify the client id." });
+            return res.status(404).json(error);
         }
         
     }

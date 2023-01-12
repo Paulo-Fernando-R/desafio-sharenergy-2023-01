@@ -40,7 +40,7 @@ export default function ClientPage(props) {
 
         if (handleSubmit(name, email, phone, address, cpf) === 'invalid-cpf') {
             alert('Insira um CPF válido');
-            return
+            //return
         }
 
         if (!edit) {
@@ -68,10 +68,11 @@ export default function ClientPage(props) {
 
     const load = async () => {
         setLoading(true);
-        setItens([]);
         const data = await fetchData();
-        setLoading(false);
         setItens(data);
+        setEdit(false);
+        setLoading(false);
+        
     }
 
     useEffect(() => {

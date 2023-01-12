@@ -12,7 +12,16 @@ export default function ClientCard(props) {
                         className='edit-button'
                         onClick={() => {
                             setEdit(false);
-
+                            var temp = '';
+                            props.click(
+                                temp,
+                                temp,
+                                temp,
+                                temp,
+                                temp,
+                                temp,
+                                false
+                            )
                         }}
                     >
                         Cancelar</button>
@@ -23,7 +32,6 @@ export default function ClientCard(props) {
             <div
                 className='card-main-box'
                 onClick={(e) => {
-                    //name, email, phone, address, cpf)
                     setEdit(true)
                     props.click(
                         props.client._id,
@@ -32,10 +40,9 @@ export default function ClientCard(props) {
                         props.client.phone,
                         props.client.address,
                         props.client.cpf,
-                        edit
+                        true
                     )
                 }}
-
             >
 
                 <section className='name-box'>

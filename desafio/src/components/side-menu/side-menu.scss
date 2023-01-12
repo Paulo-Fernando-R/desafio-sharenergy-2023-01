@@ -94,7 +94,7 @@
             flex-direction: row;
 
             img{
-                width: 25px;
+                width: 30px;
             }
 
             .li{
@@ -103,11 +103,6 @@
                 height: fit-content;
                 justify-content: center;
                 font-size: 15px;
-            }
-            .li:nth-child(2){
-                img{
-                    width: 35px;
-                }
             }
         }
     }

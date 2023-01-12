@@ -34,6 +34,12 @@
   padding: 10px;
   border: rgba(204, 204, 204, 0.5) solid 1px;
 }
+.client-main-box .input-main-box section form input[type=number]::-webkit-inner-spin-button,
+.client-main-box .input-main-box section form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
 .client-main-box .input-main-box section form input:focus {
   outline: none;
   transition: 400ms;
@@ -179,6 +185,7 @@
 }
 @media screen and (min-width: 1800px) {
   .list-box {
+    max-width: 100%;
     max-width: 100%;
     padding: 20px;
     display: grid;

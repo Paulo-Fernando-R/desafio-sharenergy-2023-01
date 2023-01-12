@@ -68,9 +68,7 @@ export default function MainPage(props) {
                 <nav>
                     <article>
                         <h1>Usuários disponíveis</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Libero earum deleniti neque atque veniam suscipit alias qui
-                        </p>
+                        <p>Aqui estão todos os usuários disponíveis no momento :)</p>
                         <input
                             type="text"
                             placeholder="Pesquisa"

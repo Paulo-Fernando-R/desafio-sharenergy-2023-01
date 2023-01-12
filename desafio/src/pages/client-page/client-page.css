@@ -183,13 +183,13 @@
     overflow-y: scroll;
   }
 }
-@media screen and (min-width: 1800px) {
-  .list-box {
-    max-width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+@media screen and (max-height: 900px) {
+  .client-main-box {
+    height: 180vh;
+  }
+}
+@media screen and (max-height: 700px) {
+  .client-main-box {
+    height: 200vh;
   }
 }/*# sourceMappingURL=client-page.css.map */

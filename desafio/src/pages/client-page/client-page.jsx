@@ -144,9 +144,11 @@ export default function ClientPage(props) {
             <nav className='list-main-box'>
                 <article>
                     <h1>Clientes cadastrados</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-                        illo quidem iste omnis ipsam dolorem placeat, tempora autem, minus,
-                        eos quia architecto recusandae sit corrupti a ratione dolorum velit sint!
+                    <p>
+                        Para alterar informações de um cliente basta clicar nele, então irá aparecer acima do Card
+                        selecionada um botão verde e os dados serão atuais inseridos automaticamente 
+                        nos campos de texto. Caso desista de editar basta clicar no botão verde acima do Card,
+                        onde está escrito "CANCELAR".
                     </p>
                 </article>
 

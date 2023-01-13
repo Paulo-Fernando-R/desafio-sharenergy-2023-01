@@ -4,35 +4,44 @@ import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom';
 import './login.css'
 import '../../global-style.css'
+import { Navigate } from "react-router-dom";
 import pana from '../../assets/pana.png'
-export default function LoginPage(props){
+export default function LoginPage(props) {
 
     const [cookie, setCookie, removeCoockie] = useCookies()
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false)
     const navigate = useNavigate();
-    /*useEffect(() => {
-        setCookie('login', 'logado', {path:'/'});
-    })*/
 
+    function verifyRemember() {
+        if (cookie.login === 'true') {
+            navigate('/');
+        }
+    }
+
+    useEffect(() => {
+        verifyRemember();
+    })
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-       if(user === 'desafiosharenergy' && password === 'sh@r3n3rgy'){
-        alert('Bem vindo')
-        
-       }
-       else{
-        setCookie('login', true, { path:'/'});
-        navigate('/');
-        alert('Usuário ou senha incorretos')
-        setUser('')
-        setPassword('')
-       }
+        if (user !== 'desafiosharenergy' || password !== 'sh@r3n3rgy') {
+            alert('Usuário ou senha incorretos')
+            setUser('')
+            setPassword('')
+        }
+        else {
+            if (remember)
+                setCookie('remember', true, { path: '/' });
+
+            setCookie('login', true, { path: '/' });
+            navigate('/');
+            alert('Bem vindo')
+        }
     }
 
-    return(
+    return (
         <div className="main-box">
             <section>
                 <img src={pana} alt="" />
@@ -45,25 +54,25 @@ export default function LoginPage(props){
                 </div>
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <input 
-                            required 
-                            type="text" 
+                        <input
+                            required
+                            type="text"
                             placeholder="Usuário"
                             value={user}
-                            onChange={(e) => {setUser(e.target.value)}}
+                            onChange={(e) => { setUser(e.target.value) }}
                         />
-                        <input 
-                            required 
-                            type="password" 
-                            placeholder="Senha" 
+                        <input
+                            required
+                            type="password"
+                            placeholder="Senha"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <label htmlFor="check">Lembrar do usuário</label>
-                        <input 
-                            id="check" 
-                            name="check" 
-                            type="checkbox" 
+                        <input
+                            id="check"
+                            name="check"
+                            type="checkbox"
                             value={remember}
                             onChange={(e) => setRemember(e.target.value)}
                         />

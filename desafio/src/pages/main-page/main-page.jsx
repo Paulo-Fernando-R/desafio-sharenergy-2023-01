@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Navigate } from "react-router-dom";
-import { useCookies } from 'react-cookie'
 import './main-page.css'
 import '../../global-style.css'
 import CardComponent from "./components/card-component";

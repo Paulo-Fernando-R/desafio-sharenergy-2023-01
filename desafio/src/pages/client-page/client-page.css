@@ -182,6 +182,9 @@
     margin-bottom: 10vh;
     overflow-y: scroll;
   }
+  .list-main-box article {
+    height: 200px;
+  }
 }
 @media screen and (max-height: 900px) {
   .client-main-box {

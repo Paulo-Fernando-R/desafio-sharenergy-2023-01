@@ -113,7 +113,6 @@
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
-            // grid-auto-rows: minmax(270px, auto);
         }
 
     }
@@ -156,8 +155,6 @@
                 }
             }
         }
-
-        .list-main-box {}
     }
 
 }
@@ -218,7 +215,7 @@
         overflow-y: scroll;
 
         article {
-            //display: none;
+            height: 200px;
         }
     }
 }

@@ -4,11 +4,10 @@ import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom';
 import './login.css'
 import '../../global-style.css'
-import { Navigate } from "react-router-dom";
 import pana from '../../assets/pana.png'
 export default function LoginPage(props) {
 
-    const [cookie, setCookie, removeCoockie] = useCookies()
+    const [cookie, setCookie] = useCookies()
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false)
@@ -59,7 +58,7 @@ export default function LoginPage(props) {
                             type="text"
                             placeholder="Usuário"
                             value={user}
-                            onChange={(e) => { setUser(e.target.value) }}
+                            onChange={(e) => { setUser(e.target.value); console.log(user)}}
                         />
                         <input
                             required

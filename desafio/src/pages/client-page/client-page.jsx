@@ -15,7 +15,7 @@ export default function ClientPage(props) {
     const [id, setId] = useState('');
     const [name, setname] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState();
+    const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [cpf, setCpf] = useState('');
     const [itens, setItens] = useState([]);
@@ -39,7 +39,7 @@ export default function ClientPage(props) {
 
         if (handleSubmit(name, email, phone, address, cpf) === 'invalid-cpf') {
             alert('Insira um CPF válido');
-            //return
+            return
         }
 
         if (!edit) {

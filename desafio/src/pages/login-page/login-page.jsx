@@ -49,7 +49,7 @@ export default function LoginPage(props) {
             <section>
                 <div>
                     <h1>Faça Login</h1>
-                    <h4>Outra coisa</h4>
+                    <h4>Entre para poder usar nosso App</h4>
                 </div>
                 <div>
                     <form onSubmit={handleSubmit}>
